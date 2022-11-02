@@ -14,7 +14,7 @@ type Builder struct {
 	cancel  context.CancelFunc
 }
 
-func NeWBuilder() *Builder {
+func NewBuilder() *Builder {
 	return &Builder{}
 }
 
@@ -39,8 +39,8 @@ func (b *Builder) WithContext(ctx context.Context, cancel context.CancelFunc) *B
 	return b
 }
 
-func (b *Builder) WithHandler(handler *http.Handler) *Builder {
-	b.handler = *handler
+func (b *Builder) WithHandler(handler http.Handler) *Builder {
+	b.handler = handler
 	return b
 }
 
